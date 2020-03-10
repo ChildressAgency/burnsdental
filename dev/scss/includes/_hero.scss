@@ -1,0 +1,39 @@
+.hero{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+#hp-hero{
+  padding-top: 200px;
+  padding-bottom: 150px;
+
+  .hero-caption{
+    position: relative;
+    z-index: 5;
+    text-align: center;
+
+    .hero-caption-inner{
+      display: inline-block;
+      padding: 20px;
+      border: 24px solid rgba(177, 174, 128, .7);
+      border-radius: 12px;
+    }
+
+    h1{
+      font-size: 40px;
+      font-weight: $font-weight-black;
+      color: $color-alt-dark;
+      text-transform: uppercase;
+      margin-top: 15px;
+      margin-bottom: 0;
+
+      small{
+        display: block;
+        font-size: 30px;
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+}
