@@ -1,0 +1,35 @@
+
+#testimonials{
+  position: relative;
+
+  .container-fluid{
+    position: relative;
+    z-index: 5;
+  }
+}
+
+#newsletter-signup{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: $color-main;
+  color: #fff;
+  text-align: center;
+
+  h3{
+    font-size: 34px;
+    font-weight: $font-weight-black;
+  }
+
+  .newsletter-form{
+    justify-content: center;
+
+    input,
+    .btn-main{
+      margin-top: 25px;
+    }
+    .form-control{
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+}
