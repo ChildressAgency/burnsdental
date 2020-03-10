@@ -16,6 +16,150 @@
   }
 }
 
+#meet-the-doctor{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  h2{
+    font-size: 50px;
+    font-weight: $font-weight-black;
+    color: $color-alt;
+    text-transform: uppercase;
+  }
+}
+
+#hp-services{
+  text-align: center;
+
+  .hp-service{
+    max-width: 525px;
+    padding-left: 125px;
+    text-align: left;
+    position: relative;
+    margin-top: 40px;
+
+    p{
+      line-height: 1.2em;
+    }
+
+    .btn-main{
+      margin-top: 15px;
+    }
+
+    h3{
+      font-size: 32px;
+      font-weight: $font-weight-black;
+      color: $color-alt;
+      text-transform: uppercase;
+    }
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url(images/sprites.png);
+      background-repeat: no-repeat;
+    }
+
+    &#preventative-care::before{
+      background-position:0px 0px;
+      height: 75px;
+      width: 88px;
+    }
+    &#family-dentistry::before{
+      background-position: -212px 0px;
+      height: 82px;
+      width: 65px;
+    }
+    &#cosmetic-dentistry::before{
+      background-position: -284px 0px;
+      height: 86px;
+      width: 81px;
+    }
+    &#tooth-replacement::before{
+      background-position: -370px 0px;
+      height: 73px;
+      width: 93px;
+    }
+    &#extractions-preservations::before{
+      background-position: -640px 0px;
+      height: 69px;
+      width: 66px;
+    }
+    &#orthodontics::before{
+      background-position: -93px 0px;
+      height: 53px;
+      width: 113px;
+    }
+    &#sedation-dentistry::before{
+      background-position: -469px 0px;
+      height: 98px;
+      width: 71px;
+    }
+    &#dental-technology::before{
+      background-position: -546px 0px;
+      height: 83px;
+      width: 91px;
+    }
+  }
+}
+
+.hp-team-members{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.team-member-list{
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .team-member{
+    width:260px;
+    height: 365px;
+    position: relative;
+    margin: 25px;
+
+    a{
+      display: block;
+      color: #fff;
+      background-color: rgba(177, 174, 128, .6);
+      padding: 10px;
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+
+      h4{
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+
+        small{
+          display: block;
+        }
+      }
+
+      &:hover,
+      &:focus{
+        background-color: rgba(177, 174, 128, 1);
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 #testimonials{
   position: relative;
 }

@@ -1,12 +1,49 @@
 body{
   font-size: 18px;
-  color: #4d4d4d;
+  color: $color-dark-gray;
   font-family: $font-family;
   font-weight: $font-weight-normal;
 }
 
 a{
   transition: all .2s ease;
+  font-weight: $font-weight-bold;
+  color: $color-dark-gray;
+
+  &:hover,
+  &:focus{
+    color: $color-dark-gray;
+  }
+}
+
+.btn-main{
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  background-color: $color-main;
+  padding: 5px 40px;
+  margin-top: 40px;
+
+  &.btn-large{
+    font-size: 26px;
+  }
+
+  &.btn-x-large{
+    font-size: 44px;
+  }
+
+  &:hover,
+  &:focus{
+    color: #fff;
+    text-decoration: none;
+    background-color: $color-alt;
+  }
+}
+
+section{
+  padding-top: 40px;
+  padding-bottom: 60px;
 }
 
 .container-fluid{
@@ -85,10 +122,16 @@ a{
     width: 100%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) !important;
     text-align: center;
     font-size: .5em;
     color: $color-alt-dark;
+  }
+}
+
+@include media-breakpoint-down(xs){
+  .text-on-text{
+    font-size: 80px;
   }
 }
 

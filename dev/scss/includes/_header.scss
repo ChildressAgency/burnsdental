@@ -16,7 +16,7 @@
   }
 
   .header-contact{
-    margin-right: 50px;
+    cmargin-right: 50px;
      position: relative;
 
     &::before{
@@ -80,6 +80,7 @@
   .nav-link{
     font-size: 22px;
     color: $color-alt-dark;
+    font-weight: $font-weight-normal;
 
     &::before{
       content: attr(title);
