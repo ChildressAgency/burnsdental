@@ -12,9 +12,10 @@
 @import "variables";
 
 /*******************************
-* bootstrap scss files
+* vendor scss files
 *******************************/
 @import "includes/bootstrap";
+@import "includes/aos";
 
 /******************************
 * main scss file with gobal
@@ -25,3 +26,4 @@
 /*******************************
 * scss partial files
 *******************************/
+@import "includes/header";

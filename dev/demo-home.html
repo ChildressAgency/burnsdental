@@ -16,47 +16,57 @@
 
 <body>
   <header id="header">
-    <div id="masthead" class="navbar navbar-expand-md">
+    <div id="masthead" class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <div class="collapse navbar-collapse navmenu hours-phone-social">
-          <div class="hours">
-            <p><a href="#">Business Hours</a></p>
-          </div>
-          <div class="phone">
-            <p><a href="#">Call: 540.373.6557</a></p>
-          </div>
-          <div class="social">
-            <a href="#" id="facebook" aria-label="Facebook">
-              <svg class="social-icon">
-                <use xlink:href="#icon-facebook" />
-              </svg>
-            </a>
-            <a href="#" id="instagram" aria-label="Instagram">
-              <svg class="social-icon">
-                <use xlink:href="#icon-instagram" />
-              </svg>
-            </a>
-            <a href="#" id="twitter" aria-label="Twitter">
-              <svg class="social-icon">
-                <use xlink:href="#icon-twitter" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <nav class="navbar navbar-expand-md">
-      <div class="container-fluid">
-        <a href="brand">
-          <img src="../wp-theme-files/images/logo.png" class="img-fluid d-block" alt="Logo" />
-        </a>
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle Navigation">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle Navigation">
           <svg class="hamburger">
             <use xlink:href="#icon-menu-bars" />
           </svg>
         </button>
+          <div class="d-none d-lg-flex hours-phone-social">
+            <div id="header-hours" class="header-contact ml-auto">
+              <a href="#">
+                <svg class="contact-icon">
+                  <use xlink:href="#icon-clock" />
+                </svg>
+                Business Hours
+              </a>
+            </div>
+            <div id="header-phone" class="header-contact">
+              <a href="#">
+                <svg class="contact-icon">
+                  <use xlink:href="#icon-phone" />
+                </svg>  
+                Call: 540.373.6557
+              </a>
+            </div>
+            <div class="social">
+              <a href="#" id="facebook" aria-label="Facebook">
+                <svg class="social-icon">
+                  <use xlink:href="#icon-facebook" />
+                </svg>
+              </a>
+              <a href="#" id="instagram" aria-label="Instagram">
+                <svg class="social-icon">
+                  <use xlink:href="#icon-instagram" />
+                </svg>
+              </a>
+              <a href="#" id="twitter" aria-label="Twitter">
+                <svg class="social-icon">
+                  <use xlink:href="#icon-twitter" />
+                </svg>
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <nav id="header-nav" class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a href="#" class="brand">
+          <img src="../wp-theme-files/images/logo.png" class="img-fluid d-block" alt="Logo" />
+        </a>
 
-        <div id="header-nav" class="collapse navbar-collapse navmenu">
+        <div id="main-menu" class="collapse navbar-collapse navmenu">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a href="#" class="nav-link" title="Home">Home</a>
@@ -347,7 +357,42 @@
   <section id="testimonials" style="background-image:url(../wp-theme-files/images/holding-dentures.jpg);">
     <div class="container-fluid">
       <h2>Giving our patients the best smiles around</h2>
-      
+      <div id="testimonials-carousel" class="carousel slide carousel-fade" data-ride="">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div id="1-stars" class="stars"></div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed ddola</p>
+            <hr />
+            <cite>- Gabby Ellen</cite>
+          </div>
+          <div class="carousel-item">
+            <div id="2-stars" class="stars"></div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed ddola. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed ddola.</p>
+            <hr />
+            <cite>- Gabby Ellen</cite>
+          </div>
+          <div class="carousel-item">
+            <div id="3-stars" class="stars"></div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed ddola</p>
+            <hr />
+            <cite>- Gabby Ellen</cite>
+          </div>
+          <div class="carousel-item">
+            <div id="4-stars" class="stars"></div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed ddola.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed ddola.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed ddola.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed ddola</p>
+            <hr />
+            <cite>- Gabby Ellen</cite>
+          </div>
+          <div class="carousel-item">
+            <div id="5-stars" class="stars"></div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed ddola</p>
+            <hr />
+            <cite>- Gabby Ellen</cite>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="btn-main btn-large">Read All</a>
     </div>
     <div class="overlay white-overlay"></div>
   </section>
@@ -360,7 +405,7 @@
 
   <section id="newsletter-signup">
     <div class="container-fluid">
-      <h3>Want To Stary Updated with Our Newsletters?</h3>
+      <h3>Want To Stay Updated with Our Newsletters?</h3>
       <div class="newsletter-form form-inline">
         <label for="newsletter-email" class="sr-only">Your Email</label>
         <input type="email" id="newsletter-email" class="form-control mr-sm-3" placeholder="Your Email*" />
@@ -370,7 +415,39 @@
   </section>
 
   <footer id="footer">
-
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <a href="#"><img src="../wp-theme-files/images/logo.png" class="img-fluid d-block mx-auto" alt="" /></a>
+        </div>
+        <div class="col-md-6">
+          <h3>Contact Us</h3>
+          <p id="footer-address" class="footer-contact">242 Butler Road Ste 101, Fredericksburg, VA 22405</p>
+          <p id="footer-hours" class="footer-contact">Office Hours: <a href="#">Learn More</a></p>
+          <p id="footer-phone" class="footer-contact">Call: <a href="tel:540.373.6557">540.373.6557</a></p>
+        </div>
+        <div class="col-md-3">
+          <h3>Follow Us</h3>
+          <div class="social">
+            <a href="#" id="facebook" aria-label="Facebook">
+              <svg class="social-icon">
+                <use xlink:href="#icon-facebook" />
+              </svg>
+            </a>
+            <a href="#" id="instagram" aria-label="Instagram">
+              <svg class="social-icon">
+                <use xlink:href="#icon-instagram" />
+              </svg>
+            </a>
+            <a href="#" id="twitter" aria-label="Twitter">
+              <svg class="social-icon">
+                <use xlink:href="#icon-twitter" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <svg xmlns="https://www.w3.org/2000/svg" width="0" height="0" display="none">
