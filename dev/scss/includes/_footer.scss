@@ -33,3 +33,64 @@
     }
   }
 }
+
+#footer{
+  padding-top: 40px;
+  padding-bottom: 80px;
+  background-color: $color-alt-dark;
+  color: #fff;
+
+  h3{
+    font-size: 32px;
+    font-weight: $font-weight-black;
+    text-transform: uppercase;
+  }
+
+  svg.social-icon{
+    height: 50px;
+    width: 50px;
+  }
+
+  .footer-contact{
+    margin-right: 50px;
+    font-size: 24px;
+
+    a{
+      color: #fff;
+      font-size: 24px;
+      font-weight: $font-weight-bold;
+
+      &:hover,
+      &:focus{
+        text-decoration: none;
+        color: $color-main;
+      }
+    }
+
+    .contact-icon{
+      height: 25px;
+      width: 25px;
+      fill: #fff;
+      margin-top: -4px;
+      margin-right: 5px;
+    }
+  }
+
+  .copyright{
+    margin-top: 40px;
+    text-align: center;
+
+    p{
+      margin-bottom: 0;
+    }
+
+    a{
+      color: #fff;
+
+      &:hover,
+      &:focus{
+        color: #fff;
+      }
+    }
+  }
+}
