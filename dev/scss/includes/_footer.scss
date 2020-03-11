@@ -1,10 +1,83 @@
 
 #testimonials{
   position: relative;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 
   .container-fluid{
     position: relative;
     z-index: 5;
+  }
+
+  h2{
+    font-weight: $font-weight-bold;
+  }
+
+  .stars{
+    width: 300px;
+    height: 51px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(images/sprites.png);
+    background-repeat: no-repeat;
+    
+    &.stars-5{
+      background-position: 0px -570px;
+    }
+    &.stars-4{
+      background-position: 0px -627px;
+    }
+    &.stars-3{
+      background-position: 0px -681px;
+    }
+    &.stars-2{
+      background-position: 0px -736px;
+    }
+    &.stars-1{
+      background-position: 0px -789px;
+    }
+  }
+
+  .carousel-inner{
+    margin-top: 60px;
+  }
+
+  .carousel-item{
+    p{
+      font-size: 24px;
+      margin-top: 60px;
+    }
+
+    cite{
+      font-size: 24px;
+    }
+
+    hr{
+      border-color: $color-alt;
+      border-width: 3px;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .quote-mark{
+    background-repeat: no-repeat;
+    height: 280px;
+    width: 325px;
+
+    &#left-quote{
+      background-image: url(images/left-quote.png);
+      margin-left: 0;
+      margin-right: auto;
+    }
+    &#right-quote{
+      background-image: url(images/right-quote.png);
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
 }
 
@@ -92,5 +165,11 @@
         color: #fff;
       }
     }
+  }
+}
+
+@include media-breakpoint-down(sm){
+  #footer{
+    text-align: center;
   }
 }
