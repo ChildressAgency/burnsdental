@@ -30,6 +30,10 @@ button{
   margin-top: 40px;
   border: none;
 
+  &.btn-alt{
+    background-color: $color-alt-dark;
+  }
+
   &.btn-large{
     font-size: 26px;
   }
@@ -237,5 +241,16 @@ section{
 
   .white-overlay{
     background-color: rgba(255, 255, 255, .5);
+  }
+}
+
+.contact-form{
+  .control-label{
+    color: $color-alt-dark;
+    font-size: 24px;
+  }
+
+  .form-control{
+    background-color: #f2f2f2;
   }
 }
