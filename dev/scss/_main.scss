@@ -221,3 +221,21 @@ section{
     padding: 2px;
   }
 }
+
+#about{
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  .container-fluid{
+    position: relative;
+    z-index: 5;
+  }
+
+  .white-overlay{
+    background-color: rgba(255, 255, 255, .5);
+  }
+}
