@@ -38,9 +38,12 @@
           </div>
           <div class="col-lg-6">
             <!-- need to redo background image and get img of just doctor -->
+            <?php $dr_image = get_field('doctor_image'); ?>
+            <img src="<?php echo esc_url($dr_image['url']); ?>" class="img-fluid d-block mx-auto align-bottom mt-5" alt="<?php echo esc_attr($dr_image['alt']); ?>" />
           </div>
         </div>
       </div>
+      <div class="overlay dark-gradient"></div>
     </section>
 
   <?php
