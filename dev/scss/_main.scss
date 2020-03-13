@@ -52,6 +52,13 @@ button{
     text-decoration: none;
     background-color: $color-alt;
   }
+
+  &.btn-bordered:hover,
+  &.btn-bordered:focus{
+    color: $color-main;
+    text-decoration: none;
+    background-color: #fff;
+  }
 }
 
 section{
