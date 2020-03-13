@@ -127,3 +127,44 @@ function burnsdental_header_fallback_menu(){ ?>
     </ul>
   </div>
 <?php }
+
+add_filter('block_categories', 'burnsdental_custom_block_category', 10, 2);
+function burnsdental_custom_block_category($categories, $post){
+  return array_merge(
+    $categories,
+    array(
+      array(
+        'slug' => 'custom-blocks',
+        'title' => esc_html__('Custom Blocks', 'burnsdental'),
+        'icon' => 'wordpress'
+      )
+    )
+  );
+}
+
+add_action('acf/init', 'burnsdental_register_blocks');
+function burnsdental_register_blocks(){
+  if(function_exists('acf_register_block_type')){
+    acf_register_block_type(array(
+      'name' => 'prestyled_button',
+      'title' => 'Pre-Styled Button',
+      'description' => 'Add a pre-styled button',
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/prestyled_button.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/prestyled_button.css'
+    ));
+
+    acf_register_block_type(array(
+      'name' => 'text_on_text_title',
+      'title' => 'Text on Text Title',
+      'description' => 'Add a text on text title',
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/text_on_text_title.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/text_on_text_title.css'
+    ));
+  }
+}
