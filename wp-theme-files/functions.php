@@ -14,8 +14,8 @@ function jquery_cdn(){
   }
 }
 
-add_action('wp_enqueue_scripts', 'cai_scripts');
-function cai_scripts(){
+add_action('wp_enqueue_scripts', 'burnsdental_scripts');
+function burnsdental_scripts(){
   wp_register_script(
     'bootstrap-popper',
     'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',
@@ -33,7 +33,7 @@ function cai_scripts(){
   );
 
   wp_register_script(
-    'cai-scripts',
+    'burnsdental-scripts',
     get_stylesheet_directory_uri() . '/js/custom-scripts.min.js',
     array('jquery', 'bootstrap-scripts'),
     '',
@@ -42,11 +42,11 @@ function cai_scripts(){
 
   wp_enqueue_script('bootstrap-popper');
   wp_enqueue_script('bootstrap-scripts');
-  wp_enqueue_script('cai-scripts');
+  wp_enqueue_script('burnsdental-scripts');
 }
 
-add_filter('script_loader_tag', 'cai_add_script_meta', 10, 2);
-function cai_add_script_meta($tag, $handle){
+add_filter('script_loader_tag', 'burnsdental_add_script_meta', 10, 2);
+function burnsdental_add_script_meta($tag, $handle){
   switch($handle){
     case 'jquery':
       $tag = str_replace('></script>', ' integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>', $tag);
@@ -64,52 +64,66 @@ function cai_add_script_meta($tag, $handle){
   return $tag;
 }
 
-add_action('wp_enqueue_scripts', 'cai_styles');
-function cai_styles(){
+add_action('wp_enqueue_scripts', 'burnsdental_styles');
+function burnsdental_styles(){
   wp_register_style(
     'google-fonts',
-    'https://fonts.googleapis.com/css?family=Maitree:400,700|Nunito+Sans:400,600,700|Nunito:700'
+    'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,900,900i&display=swap'
   );
 
   wp_register_style(
-    'fontawesome',
-    'https://use.fontawesome.com/releases/v5.6.3/css/all.css'
-  );
-
-  wp_register_style(
-    'cai-css',
+    'burnsdental-css',
     get_stylesheet_directory_uri() . '/style.css'
   );
 
   wp_enqueue_style('google-fonts');
-  wp_enqueue_style('fontawesome');
-  wp_enqueue_style('cai-css');
+  wp_enqueue_style('burnsdental-css');
 }
 
-add_filter('style_loader_tag', 'cai_add_css_meta', 10, 2);
-function cai_add_css_meta($link, $handle){
-  switch($handle){
-    case 'fontawesome':
-      $link = str_replace('/>', ' integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">', $link);
-      break;
-  }
-
-  return $link;
-}
-
-add_action('after_setup_theme', 'cai_setup');
-function cai_setup(){
+add_action('after_setup_theme', 'burnsdental_setup');
+function burnsdental_setup(){
   add_theme_support('post-thumbnails');
   //set_post_thumbnail_size(320, 320);
 
+  add_theme_support('editor-styles');
+  add_editor_style('style-editor.css');
+
+  add_theme_support('wp-block-styles');
+  add_theme_support('responsive-embeds');
+  
   register_nav_menus(array(
     'header-nav' => 'Header Navigation',
-    'footer-nav' => 'Footer Navigation',
-    'company-menu' => 'Company Footer Menu',
-    'services-menu' => 'Services Footer Menu'
   ));
 
-  load_theme_textdomain('cai', get_stylesheet_directory_uri() . '/languages');
+  load_theme_textdomain('burnsdental', get_stylesheet_directory_uri() . '/languages');
 }
 
 require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
+
+function burnsdental_header_fallback_menu(){ ?>
+  <div id="main-menu" class="collapse navbar-collapse navmenu">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item<?php if(is_front_page()){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url()); ?>" class="nav-link" title="Home">Home</a>
+      </li>
+      <li class="nav-item<?php if(is_page('about-us')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('about-us')); ?>" class="nav-link" title="About Us">About Us</a>
+      </li>
+      <li class="nav-item<?php if(is_page('services')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('services')); ?>" class="nav-link" title="Services">Services</a>
+      </li>
+      <li class="nav-item<?php if(is_page('new-patients')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('new-patients')); ?>" class="nav-link" title="New Patients">New Patients</a>
+      </li>
+      <li class="nav-item<?php if(is_home() || is_single()){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('news-blog')); ?>" class="nav-link" title="News/Blogs">News/Blogs</a>
+      </li>
+      <li class="nav-item<?php if(is_page('staff')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('staff')); ?>" class="nav-link" title="Staff">Staff</a>
+      </li>
+      <li class="nav-item<?php if(is_page('contact')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('contact')); ?>" class="nav-link" title="Contact Us">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+<?php }
