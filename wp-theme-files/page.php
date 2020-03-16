@@ -11,7 +11,7 @@
             }
           }
           else{
-            echo '<p>Sorry, we could not find what you were looking for.</p>';
+            get_template_part('partials/loop', 'no_content');
           }
         ?>
       </article>
