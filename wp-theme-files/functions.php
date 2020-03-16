@@ -179,5 +179,16 @@ function burnsdental_register_blocks(){
       'render_template' => get_stylesheet_directory() . '/partials/blocks/text_on_text_title.php',
       'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/text_on_text_title.css'
     ));
+
+    acf_register_block_type(array(
+      'name' => 'forms-list',
+      'title' => 'Forms List Box',
+      'description' => 'Add a section with a list of form links',
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/forms_list.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/forms_list.css'
+    ));
   }
 }
