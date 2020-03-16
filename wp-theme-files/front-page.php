@@ -2,7 +2,7 @@
   <main id="main">
     <?php 
       $hp_about_bg_image = get_field('first_section_background_image'); //return url
-      $hp_about_bg_image_css = get_field('first_section_background_image');
+      $hp_about_bg_image_css = get_field('first_section_background_image_css');
     ?>
     <section id="hp-about" class="styled-border styled-border-full" style="background-image:url(<?php echo esc_url($hp_about_bg_image); ?>); <?php echo esc_attr($hp_about_bg_image_css); ?>">
       <div class="container-fluid">
@@ -20,12 +20,12 @@
 
     <section id="hp-modern">
       <div class="container-fluid">
-        <h2 class="text-on-text styled-border"><?php the_field('modern_section_bottom_title'); ?><small data-aos="fade-up" data-aos-delay="1000"><?php the_field('modern_section_top_title'); ?></small></h2>
+        <h2 class="text-on-text styled-border"><?php the_field('modern_section_title_bottom_title'); ?><small data-aos="fade-up" data-aos-delay="1000"><?php the_field('modern_section_title_top_title'); ?></small></h2>
         <?php the_field('modern_section_content'); ?>
       </div>
     </section>
 
-    <section id="meet-the-doctor" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/doctor-gradient.jpg);">
+    <section id="meet-the-doctor">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
