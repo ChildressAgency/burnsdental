@@ -4,7 +4,7 @@
       <div class="row no-gutters">
         <div class="col-lg-8 text-side">
           <article>
-            <h2 class="text-on-text styled-border"><?php the_field('first_section_bottom_title'); ?><small data-aos="fade-up" data-aos-delay="1000"><?php the_field('first_section_top_title'); ?></small></h2>
+            <h2 class="text-on-text styled-border"><?php the_field('first_section_title_bottom_title'); ?><small data-aos="fade-up" data-aos-delay="1000"><?php the_field('first_section_title_top_title'); ?></small></h2>
             <?php the_field('first_section_content'); ?>
           </article>
         </div>

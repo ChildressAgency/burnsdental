@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-7">
-            <h2 class="text-on-text styled-border"><?php the_field('first_section_bottom_title'); ?><small data-aos="fade-up" data-aos-delay="1000"><?php the_field('first_section_top_title'); ?></small></h2>
+            <h2 class="text-on-text styled-border"><?php the_field('first_section_title_bottom_title'); ?><small data-aos="fade-up" data-aos-delay="1000"><?php the_field('first_section_title_top_title'); ?></small></h2>
             <?php the_field('first_section_content'); ?>
           </div>
           <div class="col-lg-5">
@@ -18,7 +18,7 @@
 
     <section id="more-about">
       <div class="container-fluid">
-        <h2 class="text-on-text styled-border"><?php the_field('second_section_bottom_title'); ?><small data-aos-="fade-up" data-aos-delay="1000"><?php the_field('second_section_top_title'); ?></small></h2>
+        <h2 class="text-on-text styled-border"><?php the_field('second_section_title_bottom_title'); ?><small data-aos-="fade-up" data-aos-delay="1000"><?php the_field('second_section_title_top_title'); ?></small></h2>
         <div class="row">
           <div class="col-md-8">
             <div class="article">

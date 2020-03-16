@@ -8,7 +8,7 @@
   if($services->have_posts()): ?>
     <section id="hp-services">
       <div class="container-fluid">
-        <h2 class="text-on-text styled-border text-center"><?php the_field('service_section_bottom_title'); ?><small data-aos="fade-up" data-aos-delay="1000"><?php the_field('service_section_top_title'); ?></small></h2>
+        <h2 class="text-on-text styled-border text-center"><?php the_field('services_section_title_bottom_title'); ?><small data-aos="fade-up" data-aos-delay="1000"><?php the_field('services_section_title_top_title'); ?></small></h2>
         <div class="hp-services d-flex justify-content-between flex-wrap">
 
           <?php while($services->have_posts()): $services->the_post(); ?>
