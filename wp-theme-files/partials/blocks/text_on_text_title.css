@@ -1,4 +1,4 @@
-.text-on-text{
+.editor-styles-wrapper .text-on-text{
   font-size: 120px;
   font-weight: 700;
   color: #e6e6e6;
@@ -7,7 +7,7 @@
   position: relative;
   margin-bottom: 40px;
 }
-.text-on-text small{
+.editor-styles-wrapper .text-on-text small{
   position: absolute;
   height: 100%;
   width: 100%;
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 576px){
-  .text-on-text{
+  .editor-styles-wrapper .text-on-text{
     font-size: 80px;
   }
 }
