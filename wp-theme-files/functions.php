@@ -128,6 +128,19 @@ function burnsdental_header_fallback_menu(){ ?>
   </div>
 <?php }
 
+add_action('widgets_init', 'burnsdental_register_sidebars');
+function burnsdental_register_sidebars(){
+  register_sidebar(array(
+    'name' => 'Blog sidebar',
+    'id' => 'sidebar-blog',
+    'description' => 'Add widgets here to appear in your sidebar on blog posts and archive pages.',
+    'before_widget' => '<div class="sidebar-section">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
+  ));
+}
+
 add_filter('block_categories', 'burnsdental_custom_block_category', 10, 2);
 function burnsdental_custom_block_category($categories, $post){
   return array_merge(
