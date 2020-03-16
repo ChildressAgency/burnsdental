@@ -33,7 +33,12 @@
             <svg class="contact-icon">
               <use xlink:href="#icon-map-marker" />
             </svg>
-            <span itemprop="streetAddress"><?php the_field('street_address', 'option'); ?></span>, <span itemprop="addressLocality"><?php the_field('city', 'option'); ?></span>, <span itemprop="addressRegion"><?php the_field('state', 'option'); ?></span> <span itemprop="postalCode"><?php the_field('zip_code', 'option'); ?></span>
+            <?php
+              $contact_page = get_page_by_path('contact');
+              $contact_page_id = $contact_page->ID;
+            ?>
+
+            <span itemprop="streetAddress"><?php the_field('street_address', $contact_page_id); ?></span>, <span itemprop="addressLocality"><?php the_field('city', $contact_page_id); ?></span>, <span itemprop="addressRegion"><?php the_field('state', $contact_page_id); ?></span> <span itemprop="postalCode"><?php the_field('zip_code', $contact_page_id); ?></span>
           </p>
           <p id="footer-hours" class="footer-contact">
             <svg class="contact-icon">
@@ -45,7 +50,7 @@
             <svg class="contact-icon">
               <use xlink:href="#icon-phone" />
             </svg>
-            <?php $phone = get_field('phone', 'option'); ?>
+            <?php $phone = get_field('phone', $contact_page_id); ?>
             Call: <a href="tel:<?php echo esc_attr($phone); ?>"><span itemprop="telephone"><?php echo esc_html($phone); ?></span></a>
           </p>
         </div>

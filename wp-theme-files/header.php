@@ -46,7 +46,11 @@
                 Business Hours
               </a>
             </div>
-            <?php $contact_phone = get_field('phone', 'option'); ?>
+            <?php 
+              $contact_page = get_page_by_path('contact');
+              $contact_page_id = $contact_page->ID;
+              $contact_phone = get_field('phone', $contact_page_id); 
+            ?>
             <div id="header-phone" class="header-contact">
               <a href="tel:<?php echo esc_attr($contact_phone); ?>">
                 <svg class="contact-icon">
