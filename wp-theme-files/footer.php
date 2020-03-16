@@ -22,7 +22,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
-          <a href="<?php echo esc_url(home_url)); ?>">
+          <a href="<?php echo esc_url(home_url()); ?>">
             <?php $logo = get_field('site_logo', 'option'); ?>
             <img src="<?php echo esc_url($logo['url']); ?>" class="img-fluid d-block mx-auto mb-4" alt="<?php echo esc_attr($logo['alt']); ?>" />
           </a>
