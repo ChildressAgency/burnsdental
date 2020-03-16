@@ -114,27 +114,40 @@
     </nav>
   </header>
 
-  <section id="<?php if(is_front_page()){ echo 'hp-hero'; } ?>" class="hero" style="background-image:url(../wp-theme-files/images/242-butler.jpg);" data-aos="fade-in">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="hero-caption" data-aos="fade-up" data-aos-delay="500">
+  <?php
+    $page_id = get_the_ID();
 
-            <?php if(is_front_page()): ?>
-              <div class="hero-caption-inner">
-                <img src="<?php echo esc_url($logo['url']); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_attr($logo['alt']); ?>" />
-                <h1><?php the_field('hero_caption'); ?></h1>
+    if(is_home()){
+      $blog_page = get_page_by_path('news-blog');
+      $page_id = $blog_page->ID;
+    }
+
+    $hero_image = get_field('hero_image', $page_id);
+    $hero_image_css = get_field('hero_image_css', $page_id);
+
+    if($hero_image): ?>
+      <section id="<?php if(is_front_page()){ echo 'hp-hero'; } ?>" class="hero" style="background-image:url(<?php echo esc_url($hero_image); ?>); <?php echo esc_attr($hero_image_css); ?>" data-aos="fade-in">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="hero-caption" data-aos="fade-up" data-aos-delay="500">
+
+                <?php if(is_front_page()): ?>
+                  <div class="hero-caption-inner">
+                    <img src="<?php echo esc_url($logo['url']); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_attr($logo['alt']); ?>" />
+                    <h1><?php the_field('hero_caption'); ?></h1>
+                  </div>
+                <?php else: ?>
+
+                  <h1><?php the_field('hero_caption'); ?></h1>
+                  <p><?php the_field('hero_sub_caption'); ?></p>
+
+                <?php endif; ?>
+
               </div>
-            <?php else: ?>
-
-              <h1><?php the_field('hero_caption'); ?></h1>
-              <p><?php the_field('hero_sub_caption'); ?></p>
-
-            <?php endif; ?>
-
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="overlay white-gradient" data-aos="slide-right" data-aos-delay="250"></div>
-  </section>
+        <div class="overlay white-gradient" data-aos="slide-right" data-aos-delay="250"></div>
+      </section>
+  <?php endif; ?>
