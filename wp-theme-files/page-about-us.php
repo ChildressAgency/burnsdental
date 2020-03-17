@@ -8,7 +8,7 @@
             <?php the_field('first_section_content'); ?>
           </div>
           <div class="col-lg-5">
-            <?php $fist_section_image = get_field('first_section_image'); ?>
+            <?php $first_section_image = get_field('first_section_image'); ?>
             <img src="<?php echo esc_url($first_section_image['url']); ?>" class="img-fluid d-block mx-auto align-bottom" alt="<?php echo esc_attr($first_section_image['alt']); ?>" />
           </div>
         </div>
