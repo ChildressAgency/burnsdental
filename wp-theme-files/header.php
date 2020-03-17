@@ -9,7 +9,7 @@
   <meta http-equiv="cache-control" content="private">
 
   <title><?php echo esc_html(bloginfo('name')); ?></title>
-  <php wp_head(); ?>
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
