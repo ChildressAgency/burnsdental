@@ -4,8 +4,10 @@
     <div class="form-list">
       <ul>
         <?php while(have_rows('forms')): the_row(); ?>
-          <?php $form = get_sub_field('form'); ?>
-          <li><a href="<?php echo esc_url($form['url']); ?>"><?php echo $form['title'] ? esc_html($form['title']) : esc_html($form['filename']); ?></a></li>
+
+            <?php $form = get_sub_field('form'); ?>
+            <li><a href="<?php echo esc_url($form['url']); ?>"><?php echo $form['title']; ?></a></li>
+
         <?php endwhile; ?>
       </ul>
     </div>
