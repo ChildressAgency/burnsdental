@@ -1,11 +1,11 @@
 <?php
-  $testimonials_page = get_page_by_path('testimonials');
-  $testimonials_page_id = $testimonials_page->ID;
+  //$testimonials_page = get_page_by_path('testimonials');
+  //$testimonials_page_id = $testimonials_page->ID;
 
-  if(have_rows('testimonials_carousel', $testimonials_page_id)): ?>
-    <section id="testimonials" style="background-image:url(<?php the_field('testimonials_carousel_background_image', $testimonials_page_id); ?>); <?php the_field('testimonials_carousel_background_image_css', $testimonials_page_id); ?>">
+  if(have_rows('testimonials_carousel', 'option')): ?>
+    <section id="testimonials" style="background-image:url(<?php the_field('testimonials_carousel_background_image', 'option'); ?>); <?php the_field('testimonials_carousel_background_image_css', 'option'); ?>">
       <div class="container-fluid">
-        <h2><?php the_field('testimonials_carousel_title', $testimonials_page_id); ?></h2>
+        <h2><?php the_field('testimonials_carousel_title', 'option'); ?></h2>
         <div class="row">
           <div class="col-md-2 d-flex align-items-center">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/left-quote.png" class="img-fluid d-none d-md-block mr-auto" alt="" />
@@ -14,7 +14,7 @@
             <div id="testimonials-carousel" class="carousel slide carousel-fade carousel-heights" data-ride="carousel">
               <div class="carousel-inner">
 
-                <?php $s = 0; while(have_rows('testimonials_carousel', $testimonials_page_id)): the_row(); ?>
+                <?php $s = 0; while(have_rows('testimonials_carousel', 'option')): the_row(); ?>
                   <div class="carousel-item<?php if($s == 0){ echo ' active'; } ?>">
                     <?php
                       $star_review = get_sub_field('star_review');
