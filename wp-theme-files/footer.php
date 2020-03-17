@@ -1,4 +1,4 @@
-<?php get_template_part('partials/testimonials_carousel.php'); ?>
+<?php get_template_part('partials/testimonials_carousel'); ?>
 
 <?php
   $instagram_feed_shortcode = get_field('instagram_feed_shortcode', 'option');
