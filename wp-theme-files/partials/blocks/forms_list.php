@@ -5,7 +5,14 @@
       <ul>
         <?php while(have_rows('forms')): the_row(); ?>
 
-            <?php $form = get_sub_field('form'); ?>
+            <?php 
+              if(get_sub_field('form_type') == 'Document'){
+                $form = get_sub_field('form'); 
+              }
+              else{
+                $form = get_sub_field('form_link');
+              }
+            ?>
             <li><a href="<?php echo esc_url($form['url']); ?>"><?php echo $form['title']; ?></a></li>
 
         <?php endwhile; ?>
