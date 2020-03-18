@@ -6,6 +6,21 @@ jQuery(document).ready(function($){
   AOS.init();
 
   $('#testimonials-carousel.carousel-heights .carousel-inner .carousel-item').carouselHeights();
+
+  $('#team-modal').on('show.bs.modal', function(event){
+    var button = $(event.relatedTarget);
+    var teamMemberName = button.data('member_name');
+    var teamMemberTitle = button.data('member_title');
+    var teamMemberImg = button.data('modal_img');
+    var teamMemberBio = button.data('member_bio');
+
+    var modal = $(this);
+
+    modal.find('#team_member_name').text(teamMemberName);
+    modal.find('#team_member_title').text(teamMemberTitle);
+    modal.find('#team_member_image').attr('src', teamMemberImg);
+    modal.find('#team_member_bio').html(teamMemberBio);
+  });
 }); //end jQuery
 
 /**
