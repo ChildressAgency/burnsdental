@@ -33,9 +33,10 @@
           <div class="container">
             <div class="emergency-bubble" data-aos="fade-up">
               <?php echo apply_filters('the_content', wp_kses_post($emergency_message)); ?>
-        </div>
-      </div>
-    </section>
+            </div>
+          </div>
+        </section>
+    <?php endif; ?>
   </main>
 
 <?php get_footer();
