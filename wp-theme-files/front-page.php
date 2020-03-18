@@ -84,6 +84,6 @@
           </div>
         </div>
       </section>
-    <?php endif; ?>
+    <?php endif; wp_reset_postdata(); ?>
   </main>
 <?php get_footer();
