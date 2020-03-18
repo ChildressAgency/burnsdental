@@ -67,15 +67,7 @@
           <div class="container-fluid">
             <ul class="team-member-list">
               <?php while($team_members->have_posts()): $team_members->the_post(); ?>
-                <li>
-                  <div class="team-member">
-                    <?php $member_image = get_field('team_member_image'); ?>
-                    <img src="<?php echo esc_url($member_image['url']); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_attr($member_image['alt']); ?>" />
-                    <a href="<?php echo esc_url(home_url('staff')); ?>">
-                      <h4><?php the_title(); ?><small><?php the_field('team_member_title'); ?></small></h4>
-                    </a>
-                  </div>
-                </li>
+                <?php get_template_part('partials/loop', 'team_member'); ?>
               <?php endwhile; ?>
             </ul>
             <p class="text-center">
