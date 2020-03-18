@@ -42,7 +42,7 @@
 </main>
 
 <div id="team-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="team_member_name" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -53,7 +53,8 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-5">
-              <img src="" id="team_member_image" class="img-fluid d-block mx-auto rounded-circle" alt="" />
+              <div id="team_member_image"></div>
+              <!--<img src="" id="team_member_image" class="img-fluid d-block mx-auto rounded-circle" alt="" />-->
             </div>
             <div class="col-md-7">
               <h3 id="team_member_name"></h3>

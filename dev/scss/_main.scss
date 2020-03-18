@@ -422,3 +422,17 @@ section{
     bottom: 0;
   }
 }
+
+#team-modal{
+  #team_member_name{
+    color: $color-alt-dark;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  #team_member_title{
+    text-transform: uppercase;
+    font-weight: $font-weight-normal;
+  }
+}

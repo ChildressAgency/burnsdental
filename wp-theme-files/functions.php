@@ -84,6 +84,7 @@ add_action('after_setup_theme', 'burnsdental_setup');
 function burnsdental_setup(){
   add_theme_support('post-thumbnails');
   //set_post_thumbnail_size(320, 320);
+  add_image_size('team-circle', 200, 200, array('center', 'top'));
 
   add_theme_support('editor-styles');
   add_editor_style('style-editor.css');

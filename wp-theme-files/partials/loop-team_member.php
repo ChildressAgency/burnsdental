@@ -8,7 +8,8 @@
       </a>
     <?php else: ?>
       <?php
-        $modal_img = $member_image['sizes']['thumbnail'];
+        //$modal_img = $member_image['sizes']['team-circle'];
+        $modal_img = wp_get_attachment_image($member_image['ID'], 'team-circle', false, array('class' => 'img-fluid d-block mx-auto rounded-circle'));
         $member_name = get_the_title();
         $member_title = get_field('team_member_title');
         $member_bio = get_the_content();
