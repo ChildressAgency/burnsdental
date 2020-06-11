@@ -1,0 +1,44 @@
+.form-list-box{
+  max-width: 600px;
+}
+
+.form-list-box h3{
+  color: #fff;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background-color: #4d4d4d;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  padding: 5px 15px;
+  margin-bottom: 0;
+}
+
+.form-list-box .form-list{
+  background-color: #e6e6e6;
+  padding: 25px 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.form-list-box .form-list ul{
+  list-style-type: disc;
+  list-style-image: url(images/tooth-16.png);
+}
+
+.form-list-box .form-list li{
+  padding-bottom: 20px;
+}
+
+.form-list-box .form-list li a{
+  color: #4d4d4d;
+  font-size: 22px;
+  font-weight: 400;
+}
+.form-list-box .form-list li a:hover,
+.form-list-box .form-list li a:focus{
+  color: #b1ae3f;
+  font-weight: 900;
+  text-decoration: none;
+}

@@ -1,0 +1,76 @@
+.hero{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 150px;
+  margin-top: 49px;
+}
+
+.hero-caption{
+  position: relative;
+  z-index: 5;
+
+  h1{
+    font-size: 90px;
+    font-weight: $font-weight-black;
+    color: $color-alt-dark;
+    text-transform: uppercase;
+    line-height: 1em;
+  }
+
+  p{
+    font-size:46px;
+    font-weight: $font-weight-bold;
+    color: $color-alt-dark;
+    text-transform: uppercase;
+    line-height: 1em;
+  }
+
+  @include media-breakpoint-down(sm){
+    h1{
+      font-size: 60px;
+    }
+    p{
+      font-size: 28px;
+    }
+  }
+}
+
+#hp-hero{
+
+  .hero-caption{
+    position: relative;
+    z-index: 5;
+    text-align: center;
+
+    .hero-caption-inner{
+      display: inline-block;
+      padding: 20px;
+      border: 24px solid rgba(177, 174, 128, .7);
+      border-radius: 12px;
+    }
+
+    h1{
+      font-size: 40px;
+      font-weight: $font-weight-black;
+      color: $color-alt-dark;
+      text-transform: uppercase;
+      margin-top: 15px;
+      margin-bottom: 0;
+
+      small{
+        display: block;
+        font-size: 30px;
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md){
+  .hero{
+    margin-top: -97px;
+  }
+}

@@ -1,0 +1,50 @@
+.editor-styles-wrapper .text-on-text{
+  font-size: 120px;
+  font-weight: 700;
+  color: #e6e6e6;
+  line-height: 1em;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 40px;
+}
+.editor-styles-wrapper .text-on-text small{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  text-align: center;
+  font-size: .5em;
+  color: #5a5943;
+}
+
+@media (max-width: 576px){
+  .editor-styles-wrapper .text-on-text{
+    font-size: 80px;
+  }
+}
+
+.styled-border{
+  position: relative;
+  padding-bottom:20px;
+}
+.styled-border::after{
+  background: rgba(91,90,67,1);
+  background: -moz-linear-gradient(left, rgba(91,90,67,1) 0%, rgba(91,90,67,1) 33%, rgba(177,174,62,1) 33%, rgba(177,174,63,1) 66%, rgba(177,174,129,1) 66%, rgba(177,174,129,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(91,90,67,1)), color-stop(33%, rgba(91,90,67,1)), color-stop(33%, rgba(177,174,62,1)), color-stop(66%, rgba(177,174,63,1)), color-stop(66%, rgba(177,174,129,1)), color-stop(100%, rgba(177,174,129,1)));
+  background: -webkit-linear-gradient(left, rgba(91,90,67,1) 0%, rgba(91,90,67,1) 33%, rgba(177,174,62,1) 33%, rgba(177,174,63,1) 66%, rgba(177,174,129,1) 66%, rgba(177,174,129,1) 100%);
+  background: -o-linear-gradient(left, rgba(91,90,67,1) 0%, rgba(91,90,67,1) 33%, rgba(177,174,62,1) 33%, rgba(177,174,63,1) 66%, rgba(177,174,129,1) 66%, rgba(177,174,129,1) 100%);
+  background: -ms-linear-gradient(left, rgba(91,90,67,1) 0%, rgba(91,90,67,1) 33%, rgba(177,174,62,1) 33%, rgba(177,174,63,1) 66%, rgba(177,174,129,1) 66%, rgba(177,174,129,1) 100%);
+  background: linear-gradient(to right, rgba(91,90,67,1) 0%, rgba(91,90,67,1) 33%, rgba(177,174,62,1) 33%, rgba(177,174,63,1) 66%, rgba(177,174,129,1) 66%, rgba(177,174,129,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b5a43', endColorstr='#b1ae81', GradientType=1 ); 
+
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 70%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+}
