@@ -9,7 +9,7 @@ add_action('wp_enqueue_scripts', 'jquery_cdn');
 function jquery_cdn(){
   if(!is_admin()){
     wp_deregister_script('jquery');
-    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', false, null, true);
+    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', false, null, false);
     wp_enqueue_script('jquery');
   }
 }
