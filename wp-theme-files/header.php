@@ -119,6 +119,23 @@
   </header>
 
   <?php
+    $scrolling_message = get_field('scrolling_message', 'option');
+    $scrolling_message_link = get_field('scrolling_message_link', 'option');
+    if($scrolling_message): ?>
+      <div class="scrolling-message">
+        <p>
+          <?php if($scrolling_message_link): ?>
+            <a href="<?php echo esc_url($scrolling_message_link['url']); ?>" target="<?php echo $scrolling_message_link['target'] ? $scrolling_message_link['target'] : '_self'; ?>">
+              <?php echo esc_html($scrolling_message); ?>
+            </a>
+          <?php else: ?>
+            <?php echo esc_html($scrolling_message); ?>
+          <?php endif ?>
+        </p>
+      </div>
+  <?php endif; ?>
+
+  <?php
     $page_id = get_the_ID();
 
     if(is_home()){

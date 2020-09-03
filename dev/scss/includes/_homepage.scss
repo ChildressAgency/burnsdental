@@ -108,7 +108,7 @@
       height: 73px;
       width: 93px;
     }
-    &#extractions-preservations::before{
+    &#extractions-preservation::before{
       background-position: -640px 0px;
       height: 69px;
       width: 66px;
@@ -127,6 +127,11 @@
       background-position: -546px 0px;
       height: 83px;
       width: 91px;
+    }
+    &#covid-19-procedures::before{
+      background-position: -636px -85px;
+      height: 70px;
+      width: 70px;
     }
   }
 }
@@ -179,5 +184,25 @@
         text-decoration: none;
       }
     }
+  }
+}
+
+.scrolling-message{
+  padding: 15px;
+  margin-top: 56px;
+  margin-bottom: -46px;
+  overflow: hidden;
+  
+  p{
+    margin-bottom: 0;
+    line-height: 1em;
+  }
+}
+
+@include media-breakpoint-down(md){
+  .scrolling-message{
+    margin-top: 0;
+    position: relative;
+    z-index: 9;
   }
 }

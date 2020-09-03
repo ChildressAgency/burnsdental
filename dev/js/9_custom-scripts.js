@@ -22,6 +22,11 @@ jQuery(document).ready(function($){
     modal.find('#team_member_image').html(teamMemberImg);
     modal.find('#team_member_bio').html(teamMemberBio);
   });
+
+  $('.scrolling-message p').marquee({
+    pauseOnHover: true,
+    speed: 100
+  });
 }); //end jQuery
 
 /**
