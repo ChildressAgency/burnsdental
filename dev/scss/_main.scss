@@ -70,26 +70,36 @@ section{
   max-width: 1600px;
 }
 
-.alignnone{
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.alignnone img,
+img.alignnone{
   display: block;
   max-width: 100%;
   height: auto;
   padding: 25px;
 }
-.aligncenter{
+.aligncenter img,
+img.aligncenter{
   display: block;
   max-width: 100%;
   height: auto;
   margin: 25px auto;
 }
-.alignleft{
+.alignleft img,
+img.alignleft{
   display: block;
   max-width: 100%;
   height: auto;
   margin: 25px 25px 25px 0px;
   float: left;
 }
-.alignright{
+.alignright img,
+img.alignright{
   display: block;
   max-width: 100%;
   height: auto;

@@ -2,7 +2,7 @@
 <main id="main">
   <div class="container-fluid">
     <div class="row">
-      <div class="<?php echo (is_active_sidebar('sidebar-blog')) ? 'col-md-8 col-lg-9' : 'col-xs-12'; ?>">
+      <div class="<?php echo (is_active_sidebar('sidebar-blog')) ? 'col-md-8 col-lg-9' : 'col-12'; ?>">
         <section class="main-content">
           <article class="entry-content">
             <?php 

@@ -7,7 +7,7 @@
   <div class="container-fluid">
     <h2 class="text-on-text styled-border"><?php the_field('blog_page_bottom_title', $blog_page_id); ?><small data-aos="fade-up" data-aos-delay="1000"><?php the_field('blog_page_top_title', $blog_page_id); ?></small></h2>
     <div class="row">
-      <div class="<?php echo (is_active_sidebar('sidebar-blog')) ? 'col-md-8 col-lg-9' : 'col-xs-12'; ?>">
+      <div class="<?php echo (is_active_sidebar('sidebar-blog')) ? 'col-md-8 col-lg-9' : 'col-12'; ?>">
         <section id="news">
           <?php
             $most_recent_post_id = '';
