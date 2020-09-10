@@ -169,6 +169,38 @@
             </div>
           </div>
         </div>
+        <?php
+          $hero_message_link = get_field('hero_message_link', 'option');
+          $hero_message_image = get_field('hero_message_image', 'option');
+          $hero_message_title = get_field('hero_message_title' , 'option');
+          $hero_message_subtitle = get_field('hero_message_subtitle', 'option');
+          
+          if($hero_message_link || $hero_message_title || $hero_message_subtitle){
+
+            if($hero_message_link){
+              echo '<a href="' . esc_url($hero_message_link['url']) . '" id="hero-message">';
+            }
+            else{
+              echo '<div id="hero-message">';
+            }
+            
+            if($hero_message_image){
+              echo '<img src="' . esc_url($hero_message_image['url']) . '" class="img-fluid" alt="' . esc_attr($hero_message_image['alt']) . '" />';
+            }
+
+            echo '<div class="the-message">';
+            if($hero_message_title){
+              echo '<h3>' . $hero_message_title . '</h3>';
+            }
+
+            if($hero_message_subtitle){
+              echo '<p>' . $hero_message_subtitle . '</p>';
+            }
+            echo '</div>';
+
+            echo $hero_message_link ? '</a>' : '</div>';
+          }
+        ?>
         <div class="overlay white-gradient" data-aos="slide-right" data-aos-delay="250"></div>
       </section>
   <?php endif; ?>

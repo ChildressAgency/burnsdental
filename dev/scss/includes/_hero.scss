@@ -74,3 +74,54 @@
     margin-top: -97px;
   }
 }
+
+#hero-message{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: auto;
+  background-color: #7a7539;
+  color: #fff;
+  z-index: 3;
+  padding: 20px;
+
+  img{
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  .the-message{
+    display: inline-block;
+    vertical-align: middle;
+
+    h3{
+      color: #fff;
+      font-size: 32px;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      line-height: 1em;
+      margin-bottom: 0;
+    }
+    p{
+      color: #fff;
+      font-size: 32px;
+      font-weight: $font-weight-normal;
+      line-height: 1em;
+      margin-bottom: 0;
+    }
+  }
+
+  &:hover,
+  &:focus{
+    text-decoration: none;
+    background-color: $color-alt;
+  }
+}
+
+@include media-breakpoint-down(sm){
+  #hero-message{
+    position: relative;
+    display: block;
+    margin-top: 60px;
+  }
+}
