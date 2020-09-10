@@ -1,9 +1,14 @@
 <?php
-add_action('wp_footer', 'show_template');
+if(WP_DEBUG === true){
+  add_action('wp_footer', 'show_template');
+}
 function show_template() {
 	global $template;
 	print_r($template);
 }
+
+//hide acf settings
+add_filter('acf/settings/show_admin', '__return_false');
 
 add_action('wp_enqueue_scripts', 'jquery_cdn');
 function jquery_cdn(){
