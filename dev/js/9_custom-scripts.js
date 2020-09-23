@@ -5,6 +5,19 @@
 jQuery(document).ready(function($){
   AOS.init();
 
+  var heroSlider = new Swiper('.hero-slider .swiper-container', {
+    autoplay: true,
+    loop: true,
+    autoHeight: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function(index, className){
+        return '<span class="' + className + '"><span></span></span>';
+      }
+    }
+  });
+
   $('#testimonials-carousel.carousel-heights .carousel-inner .carousel-item').carouselHeights();
 
   $('#team-modal').on('show.bs.modal', function(event){

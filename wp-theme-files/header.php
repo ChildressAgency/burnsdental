@@ -143,64 +143,82 @@
       $page_id = $blog_page->ID;
     }
 
-    $hero_image = get_field('hero_image', $page_id);
-    $hero_image_css = get_field('hero_image_css', $page_id);
+    $count = 0;
+    $hero_slides = get_field('hero_slides', $page_id);
+    if(is_array($hero_slides)){
+      $count = count($hero_slides);
+    }
 
-    if($hero_image): ?>
-      <section id="<?php if(is_front_page()){ echo 'hp-hero'; } ?>" class="hero" style="background-image:url(<?php echo esc_url($hero_image); ?>); <?php echo esc_attr($hero_image_css); ?>" data-aos="fade-in">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="hero-caption" data-aos="fade-up" data-aos-delay="500">
+    if(have_rows('hero_slides', $page_id)){
+      echo '<section id="hero" class="hero-slider">';
+      echo ($count > 1) ? '<div class="swiper-container"><div class="swiper-wrapper">' : '';
 
-                <?php if(is_front_page()): ?>
-                  <div class="hero-caption-inner">
-                    <img src="<?php echo esc_url($logo['url']); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_attr($logo['alt']); ?>" />
-                    <h1><?php the_field('hero_caption'); ?></h1>
-                  </div>
-                <?php else: ?>
+      while(have_rows('hero_slides', $page_id)){
+        the_row();
 
-                  <h1><?php the_field('hero_caption'); ?></h1>
-                  <p><?php the_field('hero_sub_caption'); ?></p>
-
-                <?php endif; ?>
-
+        $hero_image = get_sub_field('hero_image');
+        if($hero_image): ?>
+          <div class="swiper-slide" style="background-image: url(<?php echo esc_url($hero_image['url']); ?>);">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-6">
+                  <?php
+                    $caption_style = get_sub_field('hero_caption_style');
+                    if($caption_style == 'logo'): ?>
+                      <div class="hero-caption" data-aos="fade-up" data-aos-delay="500">
+                        <div class="hero-caption-inner">
+                          <img src="<?php echo esc_url($logo['url']); ?>" class="img-fluid d-block mx-auto" alt="Logo" />
+                          <h1><small>Create a beautiful smile with</small>Burns Family Dentistry</h1>
+                        </div>
+                      </div>
+                  <?php elseif($caption_style == 'title'): ?>
+                      <div class="hero-caption" data-aos="fade-up" data-aos-delay="500">
+                        <h1><?php the_sub_field('hero_caption'); ?></h1>
+                        <p><?php the_sub_field('hero_sub_caption'); ?></p>
+                      </div>
+                  <?php endif; ?>
+                </div>
               </div>
             </div>
+            <?php if($caption_style != 'none'): ?>
+              <div class="overlay white-gradient"></div>
+            <?php endif; ?>
           </div>
-        </div>
-        <?php
-          $hero_message_link = get_field('hero_message_link', 'option');
-          $hero_message_image = get_field('hero_message_image', 'option');
-          $hero_message_title = get_field('hero_message_title' , 'option');
-          $hero_message_subtitle = get_field('hero_message_subtitle', 'option');
-          
-          if($hero_message_link || $hero_message_title || $hero_message_subtitle){
+        <?php endif; 
+      }
 
-            if($hero_message_link){
-              echo '<a href="' . esc_url($hero_message_link['url']) . '" id="hero-message">';
-            }
-            else{
-              echo '<div id="hero-message">';
-            }
-            
-            if($hero_message_image){
-              echo '<img src="' . esc_url($hero_message_image['url']) . '" class="img-fluid" alt="' . esc_attr($hero_message_image['alt']) . '" />';
-            }
+      echo ($count > 1) ? '</div><div class="swiper-pagination"></div></div>' : '';
 
-            echo '<div class="the-message">';
-            if($hero_message_title){
-              echo '<h3>' . $hero_message_title . '</h3>';
-            }
+      $hero_message_link = get_field('hero_message_link', 'option');
+      $hero_message_image = get_field('hero_message_image', 'option');
+      $hero_message_title = get_field('hero_message_title' , 'option');
+      $hero_message_subtitle = get_field('hero_message_subtitle', 'option');
+      
+      if($hero_message_link || $hero_message_title || $hero_message_subtitle){
 
-            if($hero_message_subtitle){
-              echo '<p>' . $hero_message_subtitle . '</p>';
-            }
-            echo '</div>';
+        if($hero_message_link){
+          echo '<a href="' . esc_url($hero_message_link['url']) . '" id="hero-message">';
+        }
+        else{
+          echo '<div id="hero-message">';
+        }
+        
+        if($hero_message_image){
+          echo '<img src="' . esc_url($hero_message_image['url']) . '" class="img-fluid" alt="' . esc_attr($hero_message_image['alt']) . '" />';
+        }
 
-            echo $hero_message_link ? '</a>' : '</div>';
-          }
-        ?>
-        <div class="overlay white-gradient" data-aos="slide-right" data-aos-delay="250"></div>
-      </section>
-  <?php endif; ?>
+        echo '<div class="the-message">';
+        if($hero_message_title){
+          echo '<h3>' . $hero_message_title . '</h3>';
+        }
+
+        if($hero_message_subtitle){
+          echo '<p>' . $hero_message_subtitle . '</p>';
+        }
+        echo '</div>';
+
+        echo $hero_message_link ? '</a>' : '</div>';
+      }
+
+      echo '</section>';
+    }

@@ -8,6 +8,35 @@
   margin-top: 49px;
 }
 
+.hero-slider{
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .swiper-slide{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 200px;
+    padding-bottom: 150px;
+    margin-top: 40px;
+    z-index:3
+  }
+
+  .swiper-pagination{
+    text-align: left;
+    left: 6%;
+
+    .swiper-pagination-bullet{
+      height: 16px;
+      width: 16px;
+      position: relative;
+      z-index: 9999;
+      background-color: $color-main;
+    }
+  }
+}
+
 .hero-caption{
   position: relative;
   z-index: 5;
@@ -36,21 +65,13 @@
       font-size: 28px;
     }
   }
-}
 
-#hp-hero{
-
-  .hero-caption{
-    position: relative;
-    z-index: 5;
+  .hero-caption-inner{
+    display: inline-block;
+    padding: 20px;
+    border: 24px solid rgba(177, 174, 128, .7);
+    border-radius: 12px;
     text-align: center;
-
-    .hero-caption-inner{
-      display: inline-block;
-      padding: 20px;
-      border: 24px solid rgba(177, 174, 128, .7);
-      border-radius: 12px;
-    }
 
     h1{
       font-size: 40px;
