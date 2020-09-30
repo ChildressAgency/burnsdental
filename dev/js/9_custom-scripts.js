@@ -9,6 +9,7 @@ jQuery(document).ready(function($){
     autoplay: true,
     loop: true,
     autoHeight: true,
+    speed: 1000,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -16,6 +17,12 @@ jQuery(document).ready(function($){
         return '<span class="' + className + '"><span></span></span>';
       }
     }
+  });
+
+  $('.hero-slider .swiper-container').hover(function(){
+    heroSlider.autoplay.stop();
+  }, function(){
+    heroSlider.autoplay.start();
   });
 
   $('#testimonials-carousel.carousel-heights .carousel-inner .carousel-item').carouselHeights();
