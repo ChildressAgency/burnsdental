@@ -103,10 +103,11 @@
       height: 73px;
       width: 93px;
     }
-    &#tooth-replacement::before{
-      background-position: -284px 0px;
-      height: 86px;
-      width: 81px;
+    &#tooth-replacement::before,
+    &#tooth-replacement-and-implants::before{
+      background-position: -550px -530px;
+      height: 80px;
+      width: 80px;
     }
     &#extractions-preservation::before{
       background-position: -640px 0px;
@@ -132,6 +133,26 @@
       background-position: -636px -85px;
       height: 70px;
       width: 70px;
+    }
+    &#dental-implants::before{
+      background-position: -284px 0px;
+      height: 86px;
+      width: 81px;
+    }
+    &#dentures::before{
+      background-position: -550px -330px;
+      height: 81px;
+      width: 110px;
+    }
+    &#solea-sleep::before{
+      background-position: -550px -430px;
+      height: 80px;
+      width: 80px;
+    }
+    &#wisdom-teeth::before{
+      background-position: -550px -630px;
+      height: 44px;
+      width: 110px;
     }
   }
 }
